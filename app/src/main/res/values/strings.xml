@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Tibicle Assignment</string>
+
+    <!-- Errors -->
+    <string name="error_unknown">Something went wrong ! try again.</string>
+    <string name="error_server">Unable to reach server ! try again.</string>
+    <string name="error_network">Network error ! please check connection.</string>
+    <string name="no_data">No list found !</string>
+    <string name="loading">Please wait !</string>
+
+    <string name="content_desc_device">device Images</string>
+
+    <string name="price_low_to_high">Price : Low to high</string>
+    <string name="price_high_to_low">Price : high to low</string>
+    <string name="rating_5_to_1">Rating : 5 to 1</string>
+
+    <string name="heading_desc">Description</string>
+    <string name="title_activity_device_detail">DeviceDetailActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>
