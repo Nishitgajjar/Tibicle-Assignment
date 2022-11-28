@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_device_img"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_106sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:contentDescription="@string/content_desc_device"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/fade_background"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_device_img" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        app:layout_constraintStart_toEndOf="@+id/iv_device_img"
+        app:layout_constraintTop_toTopOf="@+id/iv_device_img"
+        android:maxLines="1"
+        tool:text="Nokia" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_device_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@+id/tv_device_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_device_name"
+        tool:text="This is a new device, and this device is as good as the other brands so hoping everyone can buy it"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rating="5"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:theme="@style/CustomRating"
+        app:layout_constraintStart_toStartOf="@+id/tv_device_desc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_device_desc" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tv_favorite"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rating_bar"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar"
+        tool:text="120.00" />
+
+    <ImageView
+        android:id="@+id/iv_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:contentDescription="Favorite item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_device_desc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_device_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
