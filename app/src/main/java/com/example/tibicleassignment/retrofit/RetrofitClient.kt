@@ -1,6 +1,6 @@
 package com.example.tibicleassignment.retrofit
 
-import com.example.tibicleassignment.BuildConfig.*
+import com.example.tibicleassignment.BuildConfig.API_URL
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitClient() {
+class RetrofitClient {
 
     private val okHttpBuilder: OkHttpClient = OkHttpClient.Builder()
             .addInterceptor(NetworkInterceptor())

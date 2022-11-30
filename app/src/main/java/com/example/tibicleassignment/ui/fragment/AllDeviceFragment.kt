@@ -11,17 +11,17 @@ import com.example.tibicleassignment.R
 import com.example.tibicleassignment.adapters.DeviceListAdapter
 import com.example.tibicleassignment.databinding.FgAllDeviceBinding
 import com.example.tibicleassignment.models.Device
+import com.example.tibicleassignment.mvvm.viewModels.DeviceViewModel
 import com.example.tibicleassignment.retrofit.ApiResult
 import com.example.tibicleassignment.ui.activities.DeviceActivity
 import com.example.tibicleassignment.ui.activities.DeviceDetailActivity
 import com.example.tibicleassignment.utils.convertToList
 import com.example.tibicleassignment.utils.showToast
-import com.example.tibicleassignment.viewModels.MobileViewModel
 
 class AllDeviceFragment : Fragment() {
 
     private val _binding: FgAllDeviceBinding by lazy { FgAllDeviceBinding.inflate(layoutInflater) }
-    private val _mobileViewModel: MobileViewModel by activityViewModels()
+    private val _mobileViewModel: DeviceViewModel by activityViewModels()
 
     private val _deviceListAdapter: DeviceListAdapter by lazy {
         DeviceListAdapter(mutableListOf()) { view, position, device ->
@@ -59,6 +59,8 @@ class AllDeviceFragment : Fragment() {
                         is List<*> -> {
                             val response = convertToList<Device>(it.data)
                             _deviceListAdapter.addList(response)
+                            _mobileViewModel.addDevices(response)
+                            _mobileViewModel.addFavoriteLiveData.postValue(response.filter { it.isFavorite })
                             showToast("${response.size} devices found !")
                         }
                         else -> showToast(resources.getString(R.string.error_server))

@@ -12,16 +12,16 @@ import com.example.tibicleassignment.adapters.SliderAdapter
 import com.example.tibicleassignment.databinding.ActivityDeviceDetailBinding
 import com.example.tibicleassignment.models.Device
 import com.example.tibicleassignment.models.DeviceImage
+import com.example.tibicleassignment.mvvm.viewModels.DeviceViewModel
 import com.example.tibicleassignment.retrofit.ApiResult
 import com.example.tibicleassignment.utils.convertToList
 import com.example.tibicleassignment.utils.forHtmlText
 import com.example.tibicleassignment.utils.showToast
-import com.example.tibicleassignment.viewModels.MobileViewModel
 
 class DeviceDetailActivity : AppCompatActivity() {
 
     private val _binding: ActivityDeviceDetailBinding by lazy { ActivityDeviceDetailBinding.inflate(layoutInflater) }
-    private val _mobileViewModel: MobileViewModel by viewModels()
+    private val _mobileViewModel: DeviceViewModel by viewModels()
     private var textViewArray = arrayOfNulls<TextView>(1)
     private val _device by lazy { intent.getSerializableExtra("device") as Device }
 
@@ -39,6 +39,7 @@ class DeviceDetailActivity : AppCompatActivity() {
                     when (it.data) {
                         is List<*> -> {
                             val response = convertToList<DeviceImage>(it.data)
+                            _mobileViewModel.addDeviceImages(response)
                             textViewArray = arrayOfNulls(response.size)
                             setupImagesDots(response)
                         }

@@ -11,13 +11,13 @@ import com.example.tibicleassignment.databinding.ActivityDevicesBinding
 import com.example.tibicleassignment.ui.fragment.AllDeviceFragment
 import com.example.tibicleassignment.ui.fragment.FavoriteDevicesFragment
 import com.example.tibicleassignment.utils.CustomPagerAdapter
-import com.example.tibicleassignment.viewModels.MobileViewModel
+import com.example.tibicleassignment.mvvm.viewModels.DeviceViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DeviceActivity : AppCompatActivity() {
 
     private val _binding: ActivityDevicesBinding by lazy { ActivityDevicesBinding.inflate(layoutInflater) }
-    private val _mobileViewModel: MobileViewModel by viewModels()
+    private val _mobileViewModel: DeviceViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -12,14 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tibicleassignment.adapters.DeviceListAdapter
 import com.example.tibicleassignment.databinding.FgFavoriteDeviceBinding
 import com.example.tibicleassignment.models.Device
+import com.example.tibicleassignment.mvvm.viewModels.DeviceViewModel
 import com.example.tibicleassignment.ui.activities.DeviceActivity
 import com.example.tibicleassignment.ui.activities.DeviceDetailActivity
-import com.example.tibicleassignment.viewModels.MobileViewModel
 
 class FavoriteDevicesFragment : Fragment() {
 
     private val _binding: FgFavoriteDeviceBinding by lazy { FgFavoriteDeviceBinding.inflate(layoutInflater) }
-    private val _mobileViewModel: MobileViewModel by activityViewModels()
+    private val _mobileViewModel: DeviceViewModel by activityViewModels()
     private val _deviceListAdapter: DeviceListAdapter by lazy {
         DeviceListAdapter(mutableListOf()) { _, _, device ->
             goToDetailScreen(device)
